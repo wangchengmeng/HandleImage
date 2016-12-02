@@ -1,0 +1,36 @@
+颜色矩阵：ColorMatrix
+1、设置色相
+ColorMatrix hue = new ColorMatrix();
+hue.setRotate(0,hue);
+
+2、设置饱和度
+hue.setSaturation(saturation);
+
+3、设置亮度
+hue.setScale(num,num,num,1);
+
+Bitmap 是不可以在原图上进行操作的，
+要进行操作就先根据原图copy一张出来。
+
+
+
+不能直接在onCreate方法中去获取控件的宽和高
+因为哪个时候控件还没绘制完毕
+
+可以通过View的一个post(Runnable run)方法中去获取
+getWidth  getHeight
+
+ 通过 ColorMatrix的set()方法传递一个float数组将一个数组转成颜色矩阵
+ 
+ 
+ 图片是由  width*height个像素点组成
+ 每个像素点 由 RGBA四个分量控制颜色
+ 
+ 通过Color的 red(color) green(color)....取出对应的值
+ 通过Color的argb(a,r,g,b)返回一个像素点值
+ 
+ 
+
+http://www.imooc.com/video/8646
+ 
+
